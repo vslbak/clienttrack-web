@@ -185,24 +185,24 @@ export function DealDetail() {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center gap-4">
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex items-center gap-2 sm:gap-4">
         <Link to="/deals">
           <Button variant="ghost" size="icon">
             <ArrowLeft className="h-5 w-5" />
           </Button>
         </Link>
-        <div className="flex-1">
-          <h1 className="text-3xl font-bold tracking-tight">{deal.title}</h1>
+        <div className="flex-1 min-w-0">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight break-words">{deal.title}</h1>
           {deal.client && (
-            <Link to={`/clients/${deal.client.id}`} className="text-muted-foreground hover:underline">
+            <Link to={`/clients/${deal.client.id}`} className="text-sm sm:text-base text-muted-foreground hover:underline truncate block">
               {deal.client.name} {deal.client.company && `• ${deal.client.company}`}
             </Link>
           )}
         </div>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-4 md:grid-cols-2">
+      <div className="grid gap-4 sm:gap-6 grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader>
             <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
@@ -302,7 +302,7 @@ export function DealDetail() {
         </Card>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-4 sm:gap-6 grid-cols-1 lg:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle>Client Information</CardTitle>

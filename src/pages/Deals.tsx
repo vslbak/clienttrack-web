@@ -91,15 +91,15 @@ export function Deals() {
     .reduce((sum, deal) => sum + deal.value, 0);
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Deals</h1>
-          <p className="text-muted-foreground">Track your sales pipeline</p>
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Deals</h1>
+          <p className="text-sm sm:text-base text-muted-foreground">Track your sales pipeline</p>
         </div>
         <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
           <DialogTrigger asChild>
-            <Button className="gap-2">
+            <Button className="gap-2 w-full sm:w-auto">
               <Plus className="h-4 w-4" />
               New Deal
             </Button>
@@ -197,7 +197,7 @@ export function Deals() {
         </Dialog>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         <Card className="p-6">
           <div className="flex items-center justify-between">
             <div>
@@ -236,7 +236,8 @@ export function Deals() {
         </Card>
       </div>
 
-      <Card>
+      <Card className="overflow-hidden">
+        <div className="overflow-x-auto">
         <Table>
           <TableHeader>
             <TableRow>
@@ -311,6 +312,7 @@ export function Deals() {
             )}
           </TableBody>
         </Table>
+        </div>
       </Card>
     </div>
   );

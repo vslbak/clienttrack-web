@@ -63,13 +63,13 @@ export function Activities() {
   const pendingCount = activities.filter(a => !a.completed).length;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Activities</h1>
-        <p className="text-muted-foreground">Track your tasks and interactions</p>
+        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Activities</h1>
+        <p className="text-sm sm:text-base text-muted-foreground">Track your tasks and interactions</p>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         <Card className="p-6">
           <div className="flex items-center justify-between">
             <div>

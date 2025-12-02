@@ -149,15 +149,15 @@ export function Clients() {
     }
 
     return (
-        <div className="space-y-6">
-            <div className="flex items-center justify-between">
+        <div className="space-y-4 sm:space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div>
-                    <h1 className="text-3xl font-bold tracking-tight">Clients</h1>
-                    <p className="text-muted-foreground">Manage your client relationships</p>
+                    <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Clients</h1>
+                    <p className="text-sm sm:text-base text-muted-foreground">Manage your client relationships</p>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
                     <Select value={industryFilter} onValueChange={setIndustryFilter}>
-                        <SelectTrigger className="w-[200px]">
+                        <SelectTrigger className="w-full sm:w-[200px]">
                             <Filter className="h-4 w-4 mr-2" />
                             <SelectValue placeholder="All Industries" />
                         </SelectTrigger>
@@ -170,7 +170,7 @@ export function Clients() {
                     </Select>
                     <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
                     <DialogTrigger asChild>
-                        <Button className="gap-2">
+                        <Button className="gap-2 w-full sm:w-auto">
                             <Plus className="h-4 w-4"/>
                             Add Client
                         </Button>
@@ -248,7 +248,8 @@ export function Clients() {
                 </div>
             </div>
 
-            <Card>
+            <Card className="overflow-hidden">
+                <div className="overflow-x-auto">
                 <Table>
                     <TableHeader>
                         <TableRow>
@@ -348,6 +349,7 @@ export function Clients() {
                         )}
                     </TableBody>
                 </Table>
+                </div>
             </Card>
 
             <Dialog open={editDialogOpen} onOpenChange={setEditDialogOpen}>

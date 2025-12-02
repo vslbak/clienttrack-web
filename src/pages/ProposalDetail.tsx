@@ -64,25 +64,25 @@ export function ProposalDetail() {
     ) || 0;
 
     return (
-        <div className="space-y-6">
-            <div className="flex items-center gap-4">
+        <div className="space-y-4 sm:space-y-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <Link to="/proposals">
                     <Button variant="ghost" size="icon">
                         <ArrowLeft className="h-5 w-5" />
                     </Button>
                 </Link>
-                <div className="flex-1">
-                    <div className="flex items-center gap-3">
-                        <FileText className="h-8 w-8 text-primary" />
-                        <div>
-                            <h1 className="text-3xl font-bold tracking-tight">{proposal.title}</h1>
-                            <p className="text-muted-foreground">{proposal.description}</p>
+                <div className="flex-1 min-w-0">
+                    <div className="flex items-start gap-3">
+                        <FileText className="h-6 sm:h-8 w-6 sm:w-8 text-primary flex-shrink-0" />
+                        <div className="min-w-0">
+                            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight break-words">{proposal.title}</h1>
+                            <p className="text-sm sm:text-base text-muted-foreground break-words">{proposal.description}</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-4">
+            <div className="grid gap-4 sm:gap-6 grid-cols-2 lg:grid-cols-4">
                 <Card>
                     <CardHeader>
                         <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
@@ -144,7 +144,7 @@ export function ProposalDetail() {
                 </Card>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2">
                 {proposal.deal?.client && (
                     <Card>
                         <CardHeader>

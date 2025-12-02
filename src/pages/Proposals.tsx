@@ -63,15 +63,15 @@ export function Proposals() {
     const sentCount = proposals.filter(p => p.status === 'SENT').length;
 
     return (
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
             {/* Header */}
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div>
-                    <h1 className="text-3xl font-bold tracking-tight">Proposals</h1>
-                    <p className="text-muted-foreground">Manage your sales proposals</p>
+                    <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Proposals</h1>
+                    <p className="text-sm sm:text-base text-muted-foreground">Manage your sales proposals</p>
                 </div>
-                <Link to="/proposals/new">
-                    <Button className="gap-2">
+                <Link to="/proposals/new" className="w-full sm:w-auto">
+                    <Button className="gap-2 w-full sm:w-auto">
                         <Plus className="h-4 w-4" />
                         New Proposal
                     </Button>
@@ -79,7 +79,7 @@ export function Proposals() {
             </div>
 
             {/* KPI Cards */}
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                 <Card className="p-6">
                     <div className="flex items-center justify-between">
                         <div>
@@ -114,7 +114,8 @@ export function Proposals() {
             </div>
 
             {/* Table */}
-            <Card>
+            <Card className="overflow-hidden">
+                <div className="overflow-x-auto">
                 <Table>
                     <TableHeader>
                         <TableRow>
@@ -237,6 +238,7 @@ export function Proposals() {
                         )}
                     </TableBody>
                 </Table>
+                </div>
             </Card>
         </div>
     );

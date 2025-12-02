@@ -107,38 +107,38 @@ export function ClientDetail() {
     const activeDeals = deals.filter(d => d.status === 'ACTIVE');
 
     return (
-        <div className="space-y-6">
-            <div className="flex items-center gap-4">
+        <div className="space-y-4 sm:space-y-6">
+            <div className="flex items-center gap-2 sm:gap-4">
                 <Link to="/clients">
                     <Button variant="outline" size="icon">
                         <ArrowLeft className="h-5 w-5 flex-shrink-0"/>
                     </Button>
                 </Link>
-                <div className="flex-1">
-                    <h1 className="text-3xl font-bold tracking-tight">{client.name}</h1>
-                    <p className="text-muted-foreground">{client.company || 'No company'}</p>
+                <div className="flex-1 min-w-0">
+                    <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight break-words">{client.name}</h1>
+                    <p className="text-sm sm:text-base text-muted-foreground truncate">{client.company || 'No company'}</p>
                 </div>
             </div>
 
             <Card>
                 <CardHeader>
-                    <div className="flex items-center gap-4">
+                    <div className="flex flex-col sm:flex-row items-center gap-4">
                         <div
-                            className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 text-2xl font-bold">
+                            className="flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 text-lg sm:text-2xl font-bold flex-shrink-0">
                             {client.company ? client.company.split(' ').map(n => n[0]).join('').toUpperCase() : client.name.split(' ').map(n => n[0]).join('').toUpperCase()}
                         </div>
-                        <div className="flex-1">
-                            <CardTitle className="text-2xl">{client.name}</CardTitle>
+                        <div className="flex-1 min-w-0 text-center sm:text-left">
+                            <CardTitle className="text-xl sm:text-2xl break-words">{client.name}</CardTitle>
                             <CardDescription>{client.company || 'No company'}</CardDescription>
                         </div>
-                        <div className="text-right">
-                            <p className="text-sm text-muted-foreground">Last Activity</p>
-                            <p className="text-sm font-medium">{formatClientLastActivity(client, 'MMM d, yyyy')}</p>
+                        <div className="text-center sm:text-right">
+                            <p className="text-xs sm:text-sm text-muted-foreground">Last Activity</p>
+                            <p className="text-xs sm:text-sm font-medium">{formatClientLastActivity(client, 'MMM d, yyyy')}</p>
                         </div>
                     </div>
                 </CardHeader>
                 <CardContent>
-                    <div className="grid md:grid-cols-3 divide-x divide-border">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border">
                         <div className="flex flex-col items-center justify-center py-4 px-6 gap-2">
                             <Mail className="h-5 w-5 text-muted-foreground"/>
                             <p className="text-xs text-muted-foreground uppercase tracking-wide">Email</p>

@@ -62,15 +62,15 @@ export function Dashboard() {
   }
 
   return (
-    <div className="space-y-8 animate-fade-in">
+    <div className="space-y-6 sm:space-y-8 animate-fade-in">
       <div className="animate-slide-up">
-        <h1 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-foreground via-foreground/80 to-foreground/60 bg-clip-text text-transparent">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight bg-gradient-to-r from-foreground via-foreground/80 to-foreground/60 bg-clip-text text-transparent">
           Dashboard
         </h1>
-        <p className="text-muted-foreground mt-1">Welcome back! Here's your sales overview</p>
+        <p className="text-sm sm:text-base text-muted-foreground mt-1">Welcome back! Here's your sales overview</p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         <MetricCard
           title="Pipeline Value"
           value={`€${pipelineValue.toLocaleString()}`}
@@ -101,12 +101,12 @@ export function Dashboard() {
         />
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-4 sm:gap-6 grid-cols-1 lg:grid-cols-2">
         <DealStageChart data={dealsByStage} />
         <NextActionsList activities={activities} />
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-4 sm:gap-6 grid-cols-1">
         <RecentActivityTimeline activities={activities} />
       </div>
     </div>
